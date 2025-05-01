@@ -21,9 +21,8 @@ int main()
         if (opcao < 0 || opcao > 6)
         {
             printf("Opcao invalida! Tente novamente.\n");
-            continue;
         }
-        } while (opcao != 0);
+        } while (opcao < 0 || opcao > 6);
 
         
     }
