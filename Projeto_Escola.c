@@ -24,7 +24,15 @@ int main()
         }
         } while (opcao < 0 || opcao > 6);
 
+        switch (opcao)
+        {
+        case 1: // Cadastrar Aluno
+            /* code */
+            break;
         
+        default:
+            break;
+        }
     }
    
 }
