@@ -41,6 +41,15 @@ typedef struct Qtd
 
 } DiasMesesAnos;
 
+void q5(int *num) {
+    char rev[20] = sprintf(rev, "%d", &num);
+    int i = 0, temp = 0;
+    while(rev)
+    while(rev[i] != "\0"){
+        temp = rev[i]
+    }
+}
+
 int somar(int x, int y); //função utilizada para testes
 int fatorial(int x); //função utilizada para testes
 int q1(char data[]);
