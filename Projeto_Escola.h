@@ -63,7 +63,7 @@ int validar_cpf(char *cpf)
     int digito1 = 0;
     int digito2 = 0;
     int tam = 13;
-    while (i < tam>)
+    while (i < tam)
     {
         if (cpf != "." || cpf != "-") {
          
