@@ -42,12 +42,16 @@ typedef struct Qtd
 } DiasMesesAnos;
 
 void q5(int *num) {
-    char rev[20] = sprintf(rev, "%d", &num);
-    int i = 0, temp = 0;
-    while(rev)
-    while(rev[i] != "\0"){
-        temp = rev[i]
-    }
+    int invertido = 0;
+   if(num == 0){
+    return invertido;
+   }
+
+   while(num > 0){
+    invertido = invertido * 10 + (num%10);
+   }
+
+   return invertido;
 }
 
 int somar(int x, int y); //função utilizada para testes
@@ -61,4 +65,4 @@ int q6(int numerobase, int numerobusca);
 int q7(char matriz[8][10], char palavra[5]);
 DataQuebrada quebraData(char data[]);
 
-#endif  // TRABALHO1_PRIMEIROULTIMONOMEMATRICULA_H
+#endif  // ANDERSONSILVA-20242160007-T1.H
