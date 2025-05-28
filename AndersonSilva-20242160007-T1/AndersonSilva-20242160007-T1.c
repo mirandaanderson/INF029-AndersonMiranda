@@ -26,7 +26,16 @@
 
 #include <AndersonSilva-20242160007-T1.h>
 
-int main() {
+    /String para inteiro
+    int stringParaInteiro(char *str, int *indice) {
+    int num = 0;
+    while (str[*indice] >= '0' && str[*indice] <= '9') {
+        num = num * 10 + (str[*indice] - '0');
+        (*indice)++;
+    }
+    return num;
+}
+
     //Questão 3
     int q3(char *texto, char c, int isCaseSensitive) {
     int count = 0;
