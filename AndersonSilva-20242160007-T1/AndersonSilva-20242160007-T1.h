@@ -65,4 +65,4 @@ int q6(int numerobase, int numerobusca);
 int q7(char matriz[8][10], char palavra[5]);
 DataQuebrada quebraData(char data[]);
 
-#endif  // ANDERSONSILVA-20242160007-T1.H
+#endif // ANDERSONSILVA_20242160007_T1_H
