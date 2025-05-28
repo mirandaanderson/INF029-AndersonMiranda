@@ -27,7 +27,18 @@
 #include <AndersonSilva-20242160007-T1.h>
 
 int main() {
-
+    //Questão 3
+    int q3(char *texto, char c, int isCaseSensitive) {
+    int count = 0;
+    if (!isCaseSensitive) c = tolower(c);
+    for (int i = 0; texto[i] != '\0'; i++) {
+        char atual = texto[i];
+        if (!isCaseSensitive) atual = tolower(atual);
+        if (atual == c) count++;
+    }
+    return count;
+}
+    //Questão 5
     int q5(int num) {
     int invertido = 0;
     while (num > 0) {
