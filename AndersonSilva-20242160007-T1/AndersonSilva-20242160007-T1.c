@@ -7,6 +7,14 @@
 
 int main() {
 
+    int q5(int num) {
+    int invertido = 0;
+    while (num > 0) {
+        invertido = invertido * 10 + num % 10;
+        num /= 10;
+    }
+    return invertido;
+}
 
     return 0;
 }
