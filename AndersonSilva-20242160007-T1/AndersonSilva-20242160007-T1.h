@@ -19,43 +19,24 @@
 //  Copyright © 2016 Renato Novais. All rights reserved.
 // Última atualização: 07/05/2021
 
-// #################################################
+// ===== AndersonSilva-20242160007-T1.h =====
 #ifndef ANDERSONSILVA_20242160007_T1_H
 #define ANDERSONSILVA_20242160007_T1_H
 
-typedef struct DQ
-{
-    int iDia; 
+typedef struct {
+    int iDia;
     int iMes;
     int iAno;
-    int valido; // 0 se inválido, e 1 se válido 
-
+    int valido;
 } DataQuebrada;
 
-typedef struct Qtd
-{
+typedef struct {
     int qtdDias;
     int qtdMeses;
     int qtdAnos;
     int retorno;
-
 } DiasMesesAnos;
 
-void q5(int *num) {
-    int invertido = 0;
-   if(num == 0){
-    return invertido;
-   }
-
-   while(num > 0){
-    invertido = invertido * 10 + (num%10);
-   }
-
-   return invertido;
-}
-
-int somar(int x, int y); //função utilizada para testes
-int fatorial(int x); //função utilizada para testes
 int q1(char data[]);
 DiasMesesAnos q2(char datainicial[], char datafinal[]);
 int q3(char *texto, char c, int isCaseSensitive);
