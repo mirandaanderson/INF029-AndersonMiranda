@@ -88,5 +88,17 @@
     return invertido;
 }
 
+    //Questão 6
+    int q6(int numerobase, int numerobusca) {
+    char base[50], busca[10];
+    sprintf(base, "%d", numerobase);
+    sprintf(busca, "%d", numerobusca);
+    int tamBase = strlen(base), tamBusca = strlen(busca), count = 0;
+    for (int i = 0; i <= tamBase - tamBusca; i++) {
+        if (strncmp(&base[i], busca, tamBusca) == 0) count++;
+    }
+    return count;
+}
+
     return 0;
 }
