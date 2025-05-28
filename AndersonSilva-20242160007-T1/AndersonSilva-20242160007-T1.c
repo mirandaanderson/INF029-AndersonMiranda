@@ -26,7 +26,7 @@
 
 #include <AndersonSilva-20242160007-T1.h>
 
-    /String para inteiro
+    //String para inteiro
     int stringParaInteiro(char *str, int *indice) {
     int num = 0;
     while (str[*indice] >= '0' && str[*indice] <= '9') {
@@ -34,6 +34,24 @@
         (*indice)++;
     }
     return num;
+}
+    
+    //Questão 1
+    int q1(char data[]) {
+    int i = 0;
+    int d = stringParaInteiro(data, &i);
+    if (data[i] != '/') return 0; i++;
+    int m = stringParaInteiro(data, &i);
+    if (data[i] != '/') return 0; i++;
+    int a = stringParaInteiro(data, &i);
+    if (a < 100) a += 2000;
+    if (m < 1 || m > 12 || d < 1 || d > 31) return 0;
+    int diasMes[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int bissexto = (a % 4 == 0 && (a % 100 != 0 || a % 400 == 0));
+    if (bissexto && m == 2 && d <= 29) return 1;
+    if (m == 2 && d > 28) return 0;
+    if (d > diasMes[m-1]) return 0;
+    return 1;
 }
 
     //Questão 3
