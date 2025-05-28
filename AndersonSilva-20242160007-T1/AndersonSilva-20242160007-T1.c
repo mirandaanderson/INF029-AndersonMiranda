@@ -65,6 +65,19 @@
     }
     return count;
 }
+
+    //Questão 4
+    int q4(char *strTexto, char *strBusca, int posicoes[30]) {
+    int count = 0, tamBusca = strlen(strBusca);
+    for (int i = 0; strTexto[i] != '\0'; i++) {
+        if (strncmp(&strTexto[i], strBusca, tamBusca) == 0) {
+            posicoes[count++] = i;
+            posicoes[count++] = i + tamBusca - 1;
+        }
+    }
+    return count / 2;
+}
+
     //Questão 5
     int q5(int num) {
     int invertido = 0;
