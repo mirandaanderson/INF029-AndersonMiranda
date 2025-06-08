@@ -55,9 +55,14 @@
 }
 
     //Questão 2; Não fiz.
-    int q2(){
-        return -1;
-    }
+    DiasMesesAnos q2(char datainicial[], char datafinal[]) {
+    DiasMesesAnos resultado;
+    resultado.qtdDias = 0;
+    resultado.qtdMeses = 0;
+    resultado.qtdAnos = 0;
+    resultado.retorno = -1; // indica erro ou que a função não foi implementada
+    return resultado;
+}
 
     //Questão 3
     int q3(char *texto, char c, int isCaseSensitive) {
