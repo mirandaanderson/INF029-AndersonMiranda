@@ -54,6 +54,11 @@
     return 1;
 }
 
+    //Questão 2; Não fiz.
+    int q2(){
+        return -1;
+    }
+
     //Questão 3
     int q3(char *texto, char c, int isCaseSensitive) {
     int count = 0;
@@ -99,3 +104,8 @@
     }
     return count;
 }
+
+//Questão 7; Não fiz.
+    int q7(){
+        return -1;
+    }
