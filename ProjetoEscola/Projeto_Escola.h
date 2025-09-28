@@ -1,5 +1,5 @@
-#ifndef PROJETO_ESCOLA.H
-#define PROJETO_ESCOLA.H
+#ifndef PROJETO_ESCOLA_H
+#define PROJETO_ESCOLA_H
 
 typedef struct
 {
@@ -31,7 +31,7 @@ typedef struct
 
 void menu_principal(int *opcao);
 
-void menu_secundario (char set_menu);
+void menu_secundario (int *opcao);
 
 int validar_cpf(int);
 
