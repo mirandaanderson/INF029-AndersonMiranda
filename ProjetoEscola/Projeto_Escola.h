@@ -1,6 +1,7 @@
 #ifndef PROJETO_ESCOLA_H
 #define PROJETO_ESCOLA_H
 
+
 typedef struct
 {
     int matricula;
@@ -29,10 +30,10 @@ typedef struct
 } Disciplina;
 
 
-void menu_principal(int *opcao);
-
-void menu_secundario (int *opcao);
-
 int validar_cpf(int);
+
+int opcoes();
+
+void cadastrarAluno(Aluno *alunos, int qtd_alunos);
 
 #endif //PROJETO_ESCOLA.H

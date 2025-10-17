@@ -3,81 +3,130 @@
 #include <string.h>
 #include "Projeto_Escola.h"
 
+#define TAM 2
+
+int opcoes()
+{
+    int opcao;
+    printf("0. Voltar\n");
+    printf("1. Cadastrar\n");
+    printf("2. Listar\n");
+    printf("3. Atualizar\n");
+    printf("4. Excluir");
+    printf("Escolha uma opcao: ");
+    scanf("%d", &opcao);
+    return opcao;
+}
+
 int main()
 {
     // Declaração de variáveis
-    Aluno alunos[50];
-    Professor professores[50];
-    Disciplina disciplina[50];
+    Aluno alunos[TAM];
+    Professor professores[TAM];
+    Disciplina disciplina[TAM];
     int qtd_alunos = 0, qtd_professores = 0, qtd_disciplinas = 0;
     int opcao = -1;
+    int opccao_2 = -1;
 
-    /*while (opcao != 0)
-    {
-        do
-        {
-            // Mostra o menu principal
-        opcao = menu_principal();
-        if (opcao < 0 || opcao > 6)
-        {
-            printf("Opcao invalida! Tente novamente.\n");
-        }
-        } while (opcao < 0 || opcao > 6);
+    
+    do {
+        printf("\n########Sistema de Gerenciamento Escolar########\n\n");
+        printf("0. Sair\n");
+        printf("1. Menu Aluno\n");
+        printf("2. Menu Professor\n");
+        printf("3. Menu Disciplina\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
 
         switch (opcao)
         {
-        case 1: // Cadastrar Aluno
-           
-            break;
-        
-        default:
-            break;
+            case 0:
+                opcao = 0;
+                break;
+            case 1:
+                int sairAluno;
+                int opcaoAluno;
+                do
+                {
+                    printf("\n########  Menu Aluno  ########\n");
+                    opcaoAluno = opcoes();
+
+                    switch (opcaoAluno)
+                    {
+                        case 0:
+                            sairAluno = 0;
+                            break;
+                        case 1:
+                            if(qtd_alunos >= TAM)
+                            {
+                                printf("Lista Cheia.");
+                            }else{
+                                cadastrarAluno(alunos, qtd_alunos);
+                                qtd_alunos++;
+                            }
+                            break;
+                        case 2:
+                            for(int i = 0; i < qtd_alunos; i++)
+                            {
+                                printf("%s\n", alunos[i].nome);
+                                printf("%d\n", alunos[i].matricula);
+                                printf("%c\n", alunos[i].sexo);
+                                printf("%s\n", alunos[i].data_nascimento);
+                                printf("%s\n\n", alunos[i].cpf);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                } while (sairAluno != 0);
+                break;
+            
+            case 2:
+                printf("\n########  Menu Professor  ########\n");
+                break;
+
+            case 3:
+                printf("\n########  Menu Disciplina  ########\n");
+                break;    
+            default:
+                printf("\nOpção Inválida!\n");
+                break;
         }
-    }*/
-   menu_principal(&opcao);
-   menu_secundario(&opcao);
+    }while (opcao != 0);
+    
    
 }
 
 
-void menu_principal(int *opcao)
-{
-    printf("########Sistema de Gerenciamento Escolar########\n\n");
-    printf("1. Menu Aluno\n2. Menu Professor\n3. Menu Disciplina\n");
-    printf("Escolha uma opcao: ");
-    scanf("%d", &opcao);
-}
 
-void menu_secundario(int *opcao) {
-    char menu[3][20] = {"Aluno", "Professor", "Disciplina"};
-    
-    printf("########Menu %s########\n\n", menu[*opcao - 1]);
-    printf("1. Menu Aluno\n2. Menu Professor\n3. Menu Disciplina\n");
-    printf("Escolha uma opcao: ");
-    scanf("%d", &opcao);
-}
-/*
-int cadastrar_aluno(Aluno *alunos, int qtd_alunos)
+
+
+void cadastrarAluno(Aluno *alunos, int qtd_alunos)
 {
     int valido = 0;
 
     printf("Insira às informações do aluno:\n\n");
     printf("Nome: ");
     fgets(alunos[qtd_alunos].nome, sizeof(alunos[qtd_alunos].nome), stdin);
-    alunos[qtd_alunos].nome[strcspn(alunos[qtd_alunos].nome, "\n")] = "\0"; // Troca o '\n' por '\0'
+    alunos[qtd_alunos].nome[strcspn(alunos[qtd_alunos].nome, "\n")] = '\0'; // Troca o '\n' por '\0'
     printf("Matricula: ");
     scanf("%d", &alunos[qtd_alunos].matricula);
+    getchar();
     printf("Sexo (M/F): ");
-    scanf(" %c", &alunos[qtd_alunos].sexo);
-    printf("Dara de Nascimnto (DD/MM/AAAA): ");
-    scanf("%s", &alunos[qtd_alunos].data_nascimento);
+    scanf("%c", &alunos[qtd_alunos].sexo);
+    getchar();
+    printf("Data de Nascimnto (DD/MM/AAAA): ");
+    fgets(alunos[qtd_alunos].data_nascimento, sizeof(alunos[qtd_alunos].data_nascimento), stdin);
+    getchar();
+    alunos[qtd_alunos].data_nascimento[strcspn(alunos[qtd_alunos].data_nascimento, "\n")] = '\0'; // Troca o '\n' por '\0'
     printf("CPF (000.000.000-00):");
-    scanf("%s", &alunos[qtd_alunos].cpf);
-    while (valido != "1")
+    fgets(alunos[qtd_alunos].cpf, sizeof(alunos[qtd_alunos].cpf), stdin);
+    alunos[qtd_alunos].cpf[strcspn(alunos[qtd_alunos].cpf, "\n")] = '\0'; // Troca o '\n' por '\0'
+    /*while (valido != "1")
     {
-    }
+    }*/
 }
-
+/*
 int validar_cpf(char *cpf)
 {
     int i = 0;
