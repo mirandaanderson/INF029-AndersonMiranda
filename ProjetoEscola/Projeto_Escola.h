@@ -36,4 +36,8 @@ int opcoes();
 
 void cadastrarAluno(Aluno *alunos, int qtd_alunos);
 
+void listarAlunos(Aluno *alunos, int qtd_alunos);
+
+void pularLinha();
+
 #endif //PROJETO_ESCOLA.H
