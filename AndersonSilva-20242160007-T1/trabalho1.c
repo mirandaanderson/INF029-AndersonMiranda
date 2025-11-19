@@ -25,7 +25,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "AndersonSilva-20242160007-T1.h"
+#include "trabalho1.h"
 
     //String para inteiro
     int stringParaInteiro(char *str, int *indice) {
