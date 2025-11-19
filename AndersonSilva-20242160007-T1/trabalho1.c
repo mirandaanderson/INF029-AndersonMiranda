@@ -21,42 +21,32 @@
 // #################################################
 
 #include <stdio.h>
-#include "trabalho1.h" 
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-DataQuebrada quebraData(char data[]);
+#include "AndersonSilva-20242160007-T1.h"
 
-/*
-## função utilizada para testes  ##
-
- somar = somar dois valores
-@objetivo
-    Somar dois valores x e y e retonar o resultado da soma
-@entrada
-    dois inteiros x e y
-@saida
-    resultado da soma (x + y)
- */
-int somar(int x, int y)
-{
-    int soma;
-    soma = x + y;
-    return soma;
+    //String para inteiro
+    int stringParaInteiro(char *str, int *indice) {
+    int num = 0;
+    while (str[*indice] >= '0' && str[*indice] <= '9') {
+        num = num * 10 + (str[*indice] - '0');
+        (*indice)++;
+    }
+    return num;
 }
-
-/*
-## função utilizada para testes  ##
-
- fatorial = fatorial de um número
-@objetivo
-    calcular o fatorial de um número
-@entrada
-    um inteiro x
-@saida
-    fatorial de x -> x!
- */
-int fatorial(int x)
-{ //função utilizada para testes
+    
+    //Questão 1
+    int q1(char data[]) {
+    int i = 0;
+    int d = stringParaInteiro(data, &i);
+    if (data[i] != '/') return 0; i++;
+    int m = stringParaInteiro(data, &i);
+    if (data[i] != '/') return 0; i++;
+    int a = stringParaInteiro(data, &i);
+    if (a < 100) a += 2000;
+    if (m < 1 || m > 12 || d 
   int i, fat = 1;
     
   for (i = x; i > 1; i--)
