@@ -113,7 +113,27 @@
     return count;
 }
 
-//Questão 7; Não fiz.
-    int q7(){
-        return -1;
+//Questão 7
+    int q7(char matriz[8][10], char palavra[5]) {
+    int count = 0;
+    int len = strlen(palavra);
+    for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 10; j++) {
+    // horizontal direita
+    if (j + len <= 10) {
+    int k;
+    for (k = 0; k < len; k++)
+    if (matriz[i][j+k] != palavra[k]) break;
+    if (k == len) count++;
+    }
+    // vertical para baixo
+    if (i + len <= 8) {
+    int k;
+    for (k = 0; k < len; k++)
+    if (matriz[i+k][j] != palavra[k]) break;
+    if (k == len) count++;
+    }
+    }
+    }
+    return count;
     }
