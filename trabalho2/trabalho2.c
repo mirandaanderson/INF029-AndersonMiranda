@@ -336,7 +336,6 @@ int getQuantidadeElementosEstruturaAuxiliar(int posicao)
 {
 
     int retorno = 0;
-    int retorno = 0;
     if(ehPosicaoValida(posicao) != SUCESSO) {
         retorno = POSICAO_INVALIDA;
     } else if(vetorPrincipal[posicao].aux == NULL) {
