@@ -244,7 +244,7 @@ int getDadosOrdenadosEstruturaAuxiliar(int posicao, int vetorAux[])
         // ordenar vetor
         for(int i = 0; i < vetorPrincipal[posicao].qtd - 1; i++) {
             for(int j = i + 1; j < vetorPrincipal[posicao].qtd; j++) {
-                if(vetorAux[i > vetorAux[j]) {
+                if(vetorAux[i] > vetorAux[j]) {
                     int aux = vetorAux[i];
                     vetorAux[i] = vetorAux[j];
                     vetorAux[j] = aux;
