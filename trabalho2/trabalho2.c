@@ -310,12 +310,13 @@ int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho)
     } else if(vetorPrincipal[posicao - 1].aux == NULL) {
         retorno = SEM_ESTRUTURA_AUXILIAR;
     } else {
-        vetorPrincipal[posicao - 1].tam += novoTamanho;
+        
         int *aux = (int *)realloc(vetorPrincipal[posicao - 1].aux, vetorPrincipal[posicao - 1].tam * sizeof(int));
         if(aux == NULL) {
             retorno = SEM_ESPACO_DE_MEMORIA;
         } else {
             vetorPrincipal[posicao - 1].aux = aux;
+vetorPrincipal[posicao - 1].tam += novoTamanho;
             retorno = SUCESSO;
         }
     }
