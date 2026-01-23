@@ -63,7 +63,7 @@ int criarEstruturaAuxiliar(int posicao, int tamanho)
             
         }
     } else {
-        // se posição é um valor válido {entre 1 e 10}
+        // se posição é um valor inválido {não está entre 1 e 10}
         retorno = POSICAO_INVALIDA;
     }
 
