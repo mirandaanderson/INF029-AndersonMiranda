@@ -385,7 +385,7 @@ Objetivo: inicializa o programa. deve ser chamado ao inicio do programa
 
 */
 
-void inicializar(item vetorPrincipal[])
+void inicializar(item vetorPrincipal[], int TAM)
 {
     int i = 0;
     while(i < TAM) {
