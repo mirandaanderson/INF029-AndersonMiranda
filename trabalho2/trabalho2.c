@@ -82,11 +82,11 @@ CONSTANTES
 int inserirNumeroEmEstrutura(int posicao, int valor)
 {
     int retorno = 0;
-    int existeEstruturaAuxiliar = 0;
+   /* int existeEstruturaAuxiliar = 0;
     int temEspaco = 0;
-    int posicao_invalida = 0;
+    int posicao_invalida = 0;*/
 
-    if (posicao_invalida)
+    if (!ehPosicaoValida(posicao)
         retorno = POSICAO_INVALIDA;
     else
     {
